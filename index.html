@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📘SelfTrack - Attendance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.1.0/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 SelfTrack – Attendance Tracker</h1>
+    <button id="toggleDarkMode" aria-label="Toggle dark mode" style="float:right;">Toggle Dark Mode</button>
+
+    <form id="addSubjectForm" aria-labelledby="form-heading">
+      <h3 id="form-heading">Add Subject</h3>
+      <input type="text" id="subjectName" placeholder="Subject Name" aria-label="Subject Name" required>
+      <input type="number" id="attended" placeholder="Classes Attended" aria-label="Classes Attended" min="0" required>
+      <input type="number" id="totalDays" placeholder="Total Classes" aria-label="Total Classes" min="1" required>
+      <input type="date" id="startDate" aria-label="Start Date" required>
+      <fieldset>
+        <legend>Class Days</legend>
+        <label><input type="checkbox" name="classDays" value="Monday"> Monday</label>
+        <label><input type="checkbox" name="classDays" value="Tuesday"> Tuesday</label>
+        <label><input type="checkbox" name="classDays" value="Wednesday"> Wednesday</label>
+        <label><input type="checkbox" name="classDays" value="Thursday"> Thursday</label>
+        <label><input type="checkbox" name="classDays" value="Friday"> Friday</label>
+        <label><input type="checkbox" name="classDays" value="Saturday"> Saturday</label>
+        <label><input type="checkbox" name="classDays" value="Sunday"> Sunday</label>
+      </fieldset>
+      <button type="submit">Add Subject</button>
+    </form>
+
+    <table role="grid" aria-describedby="table-heading">
+      <thead>
+        <tr>
+          <th scope="col">Subject</th>
+          <th scope="col">Attended</th>
+          <th scope="col">Total Days</th>
+          <th scope="col">Days Passed</th>
+          <th scope="col">Net %</th>
+          <th scope="col">Final %</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="attendanceTable">
+
+      </tbody>
+    </table>
+
+    <canvas id="attendanceChart" height="120" aria-label="Attendance chart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

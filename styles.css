@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  padding: 1.5rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+#toggleDarkMode{
+  float: right;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode table {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #eee;
+}
+
+
+
+/* Container */
+.container {
+  max-width: 900px;
+  width:100%;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .container {
+  background: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #007bff;
+}
+
+body.dark-mode h1 {
+  color: #66b0ff;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus {
+  outline: 2px solid #66b0ff;
+  outline-offset: 2px;
+}
+
+body.dark-mode button {
+  background: #0056b3;
+}
+
+body.dark-mode button:hover {
+  background: #003d82;
+}
+
+/* Edit Button in Dropdown */
+.edit-btn {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  background: #ffc107;
+  color: #333;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.edit-btn:hover {
+  background: #e0a800;
+}
+
+body.dark-mode .edit-btn {
+  background: #cc9a06;
+  color: #e0e0e0;
+}
+
+body.dark-mode .edit-btn:hover {
+  background: #b38705;
+}
+
+/* Form */
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+form input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border 0.2s ease;
+}
+
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+body.dark-mode form input {
+  background: #333;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+body.dark-mode form input:focus {
+  border-color: #66b0ff;
+}
+
+/* Fieldset for Class Days */
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  grid-column: 1 / -1;
+}
+
+body.dark-mode fieldset {
+  border-color: #555;
+  background: #333;
+}
+
+legend {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+}
+
+fieldset label {
+  display: inline-block;
+  margin: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+fieldset input[type="checkbox"] {
+  margin-right: 0.25rem;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: #007bff;
+  color: #fff;
+  font-weight: 600;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+body.dark-mode th {
+  background: #0056b3;
+}
+
+tr.subject-row {
+  background: #fafafa;
+  transition: background 0.2s ease;
+
+}
+
+body.dark-mode tr.subject-row {
+  background: #333;
+  border-color: #555;
+}
+
+tr.info-row {
+  background: #f0f0f0;
+  font-size: 0.85em;
+  color: #555;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+body.dark-mode tr.info-row {
+  background: #2a2a2a;
+  color: #bbb;
+  border-color: #555;
+}
+
+tr.subject-row:hover, tr.info-row:hover {
+  background: #e6f0ff;
+}
+
+body.dark-mode tr.subject-row:hover, body.dark-mode tr.info-row:hover {
+  background: #3a3a3a;
+}
+
+.subject-row td.low {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.subject-row td.high {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+body.dark-mode .dropdown-toggle {
+  color: #66b0ff;
+}
+
+.dropdown-toggle:hover {
+  color: #0056b3;
+}
+
+body.dark-mode .dropdown-toggle:hover {
+  color: #003d82;
+}
+
+.dropdown-content {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .dropdown-content {
+  background: #2a2a2a;
+  border-color: #555;
+  color: #bbb;
+}
+
+/* Chart */
+canvas#attendanceChart {
+  max-width: 100%;
+  margin-top: 2rem;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode canvas#attendanceChart {
+  background: #2a2a2a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    min-width: 100px;
+  }
+
+  tr.info-row {
+    font-size: 0.8em;
+  }
+
+  fieldset label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .dropdown-content {
+    padding: 0.5rem;
+  }
+
+  .edit-btn {
+    padding: 0.1rem 0.3rem;
+    font-size: 0.7rem;
+  }
+}
