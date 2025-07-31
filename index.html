@@ -12,25 +12,37 @@
   <div class="container">
     <h1>📘 SelfTrack – Attendance Tracker</h1>
     <button id="toggleDarkMode" aria-label="Toggle dark mode" style="float:right;">Toggle Dark Mode</button>
-
-    <form id="addSubjectForm" aria-labelledby="form-heading">
-      <h3 id="form-heading">Add Subject</h3>
-      <input type="text" id="subjectName" placeholder="Subject Name" aria-label="Subject Name" required>
-      <input type="number" id="attended" placeholder="Classes Attended" aria-label="Classes Attended" min="0" required>
-      <input type="number" id="totalDays" placeholder="Total Classes" aria-label="Total Classes" min="1" required>
-      <input type="date" id="startDate" aria-label="Start Date" required>
-      <fieldset>
-        <legend>Class Days</legend>
-        <label><input type="checkbox" name="classDays" value="Monday"> Monday</label>
-        <label><input type="checkbox" name="classDays" value="Tuesday"> Tuesday</label>
-        <label><input type="checkbox" name="classDays" value="Wednesday"> Wednesday</label>
-        <label><input type="checkbox" name="classDays" value="Thursday"> Thursday</label>
-        <label><input type="checkbox" name="classDays" value="Friday"> Friday</label>
-        <label><input type="checkbox" name="classDays" value="Saturday"> Saturday</label>
-        <label><input type="checkbox" name="classDays" value="Sunday"> Sunday</label>
-      </fieldset>
-      <button type="submit">Add Subject</button>
-    </form>
+    <details style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: fit-content; max-width: 400px; background-color: #f9f9f9;">
+      <summary style="cursor: pointer; font-weight: bold; font-size: 16px;">➕ Add Subject</summary>
+    
+      <form id="addSubjectForm" aria-labelledby="form-heading" style="margin-top: 15px;">
+        <h3 id="form-heading" style="margin-bottom: 10px;">Add Subject</h3>
+    
+        <input type="text" id="subjectName" placeholder="Subject Name" aria-label="Subject Name" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"><br>
+    
+        <input type="number" id="attended" placeholder="Classes Attended" aria-label="Classes Attended" min="0" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"><br>
+    
+        <input type="number" id="totalDays" placeholder="Total Classes" aria-label="Total Classes" min="1" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"><br>
+    
+        <input type="date" id="startDate" aria-label="Start Date" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"><br>
+    
+        <fieldset style="border: 1px solid #ccc; border-radius: 6px; padding: 10px; margin-bottom: 15px;">
+          <legend>Class Days</legend>
+          <label><input type="checkbox" name="classDays" value="Monday"> Monday</label><br>
+          <label><input type="checkbox" name="classDays" value="Tuesday"> Tuesday</label><br>
+          <label><input type="checkbox" name="classDays" value="Wednesday"> Wednesday</label><br>
+          <label><input type="checkbox" name="classDays" value="Thursday"> Thursday</label><br>
+          <label><input type="checkbox" name="classDays" value="Friday"> Friday</label><br>
+          <label><input type="checkbox" name="classDays" value="Saturday"> Saturday</label><br>
+          <label><input type="checkbox" name="classDays" value="Sunday"> Sunday</label>
+        </fieldset>
+    
+        <button type="submit" style="padding: 8px 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+          Add Subject
+        </button>
+      </form>
+    </details>
+    
 
     <table role="grid" aria-describedby="table-heading">
       <thead>
